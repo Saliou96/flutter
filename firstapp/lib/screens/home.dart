@@ -1,54 +1,43 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  
-      body: Row(
-        children: [
-          Container(
-            color: Colors.greenAccent,
-            child: FlutterLogo(
-              size: 80.0,
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(242, 226, 206,1),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text('Food Time'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
             ),
-          ),
-          Container(
-            color: Colors.orangeAccent,
-            child: FlutterLogo(
-              size: 80.0,
+            ListTile(
+              leading: Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-          ),
-          Container(
-            color: Colors.purpleAccent,
-            child: FlutterLogo(
-              size: 80.0,
+            ListTile(
+              leading: Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
-        ],
-        selectedItemColor: Colors.deepOrange,
+            ListTile(
+              leading: Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
