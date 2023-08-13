@@ -1,6 +1,6 @@
 import 'package:firstapp/screens/home.dart';
 import 'package:firstapp/screens/login.dart';
-import 'package:firstapp/screens/open.dart';
+import 'package:firstapp/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Mes débuts sur flutter',
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Splashscreen(),
     );
   }
 }
