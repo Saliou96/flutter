@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mango_ui/screens/home.dart';
+import 'package:mango_ui/screens/login.dart';
 import 'package:mango_ui/screens/splashscreen.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Splashscreen(),
+      home: Login(),
       debugShowCheckedModeBanner: false,
     );
     
