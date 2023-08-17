@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet_ui/screens/home.dart';
 import 'package:wallet_ui/screens/list.dart';
+import 'package:wallet_ui/screens/stack.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: List(),
+      home: Stacktest(),
       debugShowCheckedModeBanner: false,
     );
   }
