@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class F_page extends StatelessWidget {
+  const F_page({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +46,31 @@ class Login extends StatelessWidget {
                         topLeft: Radius.circular(40)),
                     color: Colors.white,
                   ),
-                  padding: const EdgeInsets.all(60),
+                  padding: const EdgeInsets.all(80),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Image.asset("assets/images/logo.png"),
+                      const SizedBox(height: 30),
                       const Text(
-                        "Welcome back",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 35
-                        ),
+                        "Never forget to go green everyday, because the greener you go the higher you get",
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 30),
-                      const Row(
+                      Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-
+                            ElevatedButton(
+                              onPressed: () {print('dd');},
+                              style: ElevatedButton.styleFrom(
+                                  fixedSize: const Size(260, 50),
+                                  backgroundColor: Colors.orange,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30))),
+                              child: const Text("SIGN IN",style: TextStyle(fontWeight: FontWeight.bold)),
+                            )
                           ]),
                       const SizedBox(height: 30),
                       Row(
