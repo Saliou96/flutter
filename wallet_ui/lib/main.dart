@@ -16,6 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      routes: {
+        '':(context) => const F_page(),
+        '/login':(context) => const Login(),
+      },
+
       home: Onboarding(),
       debugShowCheckedModeBanner: false,
     );

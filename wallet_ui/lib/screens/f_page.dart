@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallet_ui/screens/login.dart';
 
 class F_page extends StatelessWidget {
   const F_page({Key? key}) : super(key: key);
@@ -63,13 +64,22 @@ class F_page extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             ElevatedButton(
-                              onPressed: () {print('dd');},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) {
+                                    return Login();
+                                  }),
+                                );
+                              },
                               style: ElevatedButton.styleFrom(
                                   fixedSize: const Size(260, 50),
                                   backgroundColor: Colors.orange,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30))),
-                              child: const Text("SIGN IN",style: TextStyle(fontWeight: FontWeight.bold)),
+                              child: const Text("SIGN IN",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             )
                           ]),
                       const SizedBox(height: 30),
@@ -84,7 +94,9 @@ class F_page extends StatelessWidget {
                                   backgroundColor: Colors.orange,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30))),
-                              child: const Text("SIGN UP",style: TextStyle(fontWeight: FontWeight.bold)),
+                              child: const Text("SIGN UP",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             )
                           ]),
                     ],
