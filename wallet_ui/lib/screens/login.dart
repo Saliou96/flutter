@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wallet_ui/screens/f_page.dart';
+import 'package:wallet_ui/screens/onboarding.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-  double height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Container(
       decoration: const BoxDecoration(
@@ -26,25 +28,46 @@ class _LoginState extends State<Login> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return Onboarding();
+                        }),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.adaptive.arrow_back_rounded,
+                      color: Colors.white,
+                      size: 40,
+                    ))
+              ],
+            ),
+          ),
           Expanded(
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  height:height*0.7,
+                  height: height * 0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.orange,
                   ),
                 ),
                 Container(
-                  height:height*0.69,
+                  height: height * 0.69,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.green),
                 ),
                 Container(
-                  height:height*0.68,
+                  height: height * 0.68,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(40),
@@ -86,8 +109,7 @@ class _LoginState extends State<Login> {
                               },
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30)
-                                  ),
+                                      borderRadius: BorderRadius.circular(30)),
                                   hintText: 'Email',
                                   labelText: "Email"),
                             ),
