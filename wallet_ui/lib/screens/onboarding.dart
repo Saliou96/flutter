@@ -40,6 +40,7 @@ class _OnboardingState extends State<Onboarding> {
                 SmoothPageIndicator(
                   controller: _controller,
                   count: 3,
+                  effect: ColorTransitionEffect(activeDotColor: Colors.green),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -55,7 +56,7 @@ class _OnboardingState extends State<Onboarding> {
                           curve: Curves.easeIn);
                   },
                   style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(260, 50),
+                      fixedSize: const Size(100, 50),
                       backgroundColor: Colors.orange,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30))),

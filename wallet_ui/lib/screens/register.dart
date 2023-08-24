@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:wallet_ui/screens/f_page.dart';
+import 'package:wallet_ui/screens/login.dart';
 import 'package:wallet_ui/screens/onboarding.dart';
-import 'package:wallet_ui/screens/register.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
+
+  final _firstnameController = TextEditingController();
+  final _lastnameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,20 +59,20 @@ class _LoginState extends State<Login> {
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  height: height * 0.75,
+                  height: height * 0.81,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.orange,
                   ),
                 ),
                 Container(
-                  height: height * 0.74,
+                  height: height * 0.8,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.green),
                 ),
                 Container(
-                  height: height * 0.73,
+                  height: height * 0.79,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(40),
@@ -82,7 +86,7 @@ class _LoginState extends State<Login> {
                     children: [
                       Image.asset("assets/images/logo.png"),
                       const Text(
-                        "Welcome back",
+                        "Welcome",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 35),
                         textAlign: TextAlign.center,
@@ -91,6 +95,43 @@ class _LoginState extends State<Login> {
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
+                            TextFormField(
+                              controller: _lastnameController,
+                              keyboardType: TextInputType.text,
+                              validator: (value) {
+                                // Check if this field is empty
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your lastname';
+                                }
+                                // the lastname is valid
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  hintText: 'Lastname',
+                                  labelText: "Lastname"),
+                            ),
+                            const SizedBox(height: 20),
+                            TextFormField(
+                              controller: _firstnameController,
+                              keyboardType: TextInputType.text,
+                              validator: (value) {
+                                // Check if this field is empty
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your firstname';
+                                }
+                                // the firstname is valid
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30)),
+                                  hintText: 'Firstname',
+                                  labelText: "Firstname"),
+                            ),
+                            const SizedBox(height: 20),
+                            // email
                             TextFormField(
                               controller: _emailController,
                               keyboardType: TextInputType.emailAddress,
@@ -120,7 +161,7 @@ class _LoginState extends State<Login> {
                               keyboardType: TextInputType.text,
                               obscureText: true,
                               validator: (value) {
-                                if (value == null || value.trim().isEmpty) {
+                                if (value == null || value.isEmpty) {
                                   return 'Please enter your password';
                                 }
                                 if (value.trim().length < 8) {
@@ -135,6 +176,29 @@ class _LoginState extends State<Login> {
                                   ),
                                   hintText: 'Password',
                                   labelText: "Password"),
+                            ),
+                            const SizedBox(height: 20),
+                            TextFormField(
+                              controller: _confirmPasswordController,
+                              keyboardType: TextInputType.text,
+                              obscureText: true,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'This field is required';
+                                }
+
+                                while (value != _passwordController) {
+                                  return 'Confimation password does not match the entered password';
+                                }
+
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  hintText: 'Confirm password',
+                                  labelText: "Confirm Password"),
                             ),
                           ],
                         ),
@@ -161,12 +225,12 @@ class _LoginState extends State<Login> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(builder: (context) {
-                                      return Register();
+                                      return Login();
                                     }),
                                   );
                                 },
                                 child: Text(
-                                  "No account? Register",
+                                  "Already have account?",
                                   style: TextStyle(color: Colors.black),
                                 )),
                           ]),
