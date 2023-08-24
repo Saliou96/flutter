@@ -14,6 +14,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+  double height = MediaQuery.of(context).size.height;
     return Scaffold(
         body: Container(
       decoration: const BoxDecoration(
@@ -26,29 +27,24 @@ class _LoginState extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            flex: 1,
-            child: Image.asset("assets/images/logo.png"),
-          ),
-          Expanded(
-            flex: 3,
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  height: 800,
+                  height:height*0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.orange,
                   ),
                 ),
                 Container(
-                  height: 590,
+                  height:height*0.69,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.green),
                 ),
                 Container(
-                  height: 580,
+                  height:height*0.68,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(40),
