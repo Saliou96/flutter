@@ -28,7 +28,6 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               Expanded(
-                flex: 2,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -39,11 +38,11 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Container(
                   // width: double.infinity,
                   decoration: BoxDecoration(
-                      color: Colors.amber,
+                      color: Colors.orange[400],
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40),
@@ -54,7 +53,8 @@ class _LoginState extends State<Login> {
                       const Text(
                         "Welcome Back",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 35,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -84,11 +84,20 @@ class _LoginState extends State<Login> {
                                   return null;
                                 },
                                 decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    hintText: 'Email',
-                                    labelText: "Email"),
+                                  hintText: 'Email',
+                                  filled: true, //<-- SEE HERE
+                                  fillColor: Colors.white,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                ),
                               ),
                               const SizedBox(height: 25),
                               TextFormField(
@@ -106,11 +115,20 @@ class _LoginState extends State<Login> {
                                   return null;
                                 },
                                 decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    hintText: 'Password',
-                                    labelText: "Password"),
+                                  hintText: 'Password',
+                                  filled: true, //<-- SEE HERE
+                                  fillColor: Colors.white,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
