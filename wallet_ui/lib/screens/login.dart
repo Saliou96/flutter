@@ -97,6 +97,11 @@ class _LoginState extends State<Login> {
                                         width: 3, color: Colors.black),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 25),
@@ -126,6 +131,11 @@ class _LoginState extends State<Login> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                 ),

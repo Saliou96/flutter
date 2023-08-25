@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Container(
                   // width: double.infinity,
                   decoration: BoxDecoration(
@@ -86,6 +86,11 @@ class _RegisterState extends State<Register> {
                                         width: 3, color: Colors.black),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 20),
@@ -112,6 +117,11 @@ class _RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                 ),
@@ -150,6 +160,11 @@ class _RegisterState extends State<Register> {
                                         width: 3, color: Colors.black),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
                                 ),
                               ),
                               const SizedBox(height: 20),
@@ -179,6 +194,11 @@ class _RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                 ),
@@ -211,6 +231,11 @@ class _RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: const BorderSide(
                                         width: 3, color: Colors.black),
+                                    borderRadius: BorderRadius.circular(50.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        width: 3, color: Colors.red),
                                     borderRadius: BorderRadius.circular(50.0),
                                   ),
                                 ),

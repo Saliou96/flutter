@@ -7,7 +7,13 @@ class Intro3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("3")
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/a.jpg"),
+            Text("d'un phytopathologiste")
+          ],
+        )
       ),
     );
   }
