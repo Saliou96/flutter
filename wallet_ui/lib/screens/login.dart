@@ -14,131 +14,109 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    // double height = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/bg.png"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.pop(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return Onboarding();
-                        }),
-                      );
-                    },
-                    icon: Icon(
-                      Icons.adaptive.arrow_back_rounded,
-                      color: Colors.white,
-                      size: 40,
-                    ))
-              ],
-            ),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height,
+            maxWidth: MediaQuery.of(context).size.width,
           ),
-          Expanded(
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(
-                  height: height * 0.75,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.orange,
-                  ),
-                ),
-                Container(
-                  height: height * 0.74,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.green),
-                ),
-                Container(
-                  height: height * 0.73,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40),
-                        topLeft: Radius.circular(40)),
-                    color: Colors.white,
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 60),
+          child: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Center(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset("assets/images/logo.png"),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  // width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
+                      )),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       const Text(
-                        "Welcome back",
+                        "Welcome Back",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 35),
+                          fontWeight: FontWeight.bold, fontSize: 35,
+                        ),
                         textAlign: TextAlign.center,
                       ),
-                      Form(
-                        key: _formKey,
-                        child: Column(
-                          children: <Widget>[
-                            TextFormField(
-                              controller: _emailController,
-                              keyboardType: TextInputType.emailAddress,
-                              validator: (value) {
-                                // Check if this field is empty
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your email';
-                                }
+                      const SizedBox(height: 50),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            children: <Widget>[
+                              TextFormField(
+                                controller: _emailController,
+                                keyboardType: TextInputType.emailAddress,
+                                validator: (value) {
+                                  // Check if this field is empty
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your email';
+                                  }
 
-                                // using regular expression
-                                if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
-                                  return "Please enter a valid email address";
-                                }
+                                  // using regular expression
+                                  if (!RegExp(r'\S+@\S+\.\S+')
+                                      .hasMatch(value)) {
+                                    return "Please enter a valid email address";
+                                  }
 
-                                // the email is valid
-                                return null;
-                              },
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30)),
-                                  hintText: 'Email',
-                                  labelText: "Email"),
-                            ),
-                            const SizedBox(height: 20),
-                            TextFormField(
-                              controller: _passwordController,
-                              keyboardType: TextInputType.text,
-                              obscureText: true,
-                              validator: (value) {
-                                if (value == null || value.trim().isEmpty) {
-                                  return 'Please enter your password';
-                                }
-                                if (value.trim().length < 8) {
-                                  return 'Password must be at least 8 characters in length';
-                                }
-                                // Return null if the entered password is valid
-                                return null;
-                              },
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  hintText: 'Password',
-                                  labelText: "Password"),
-                            ),
-                          ],
+                                  // the email is valid
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    hintText: 'Email',
+                                    labelText: "Email"),
+                              ),
+                              const SizedBox(height: 25),
+                              TextFormField(
+                                controller: _passwordController,
+                                keyboardType: TextInputType.text,
+                                obscureText: true,
+                                validator: (value) {
+                                  if (value == null || value.trim().isEmpty) {
+                                    return 'Please enter your password';
+                                  }
+                                  if (value.trim().length < 8) {
+                                    return 'Password must be at least 8 characters in length';
+                                  }
+                                  // Return null if the entered password is valid
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    hintText: 'Password',
+                                    labelText: "Password"),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
+                      const SizedBox(height: 50),
                       Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -149,10 +127,10 @@ class _LoginState extends State<Login> {
                               },
                               style: ElevatedButton.styleFrom(
                                   fixedSize: const Size(260, 50),
-                                  backgroundColor: Colors.orange,
+                                  backgroundColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30))),
-                              child: const Text("CONNEXION",
+                              child: const Text("Login",
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ),
@@ -173,11 +151,11 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-              ],
-            ),
-          )
-        ],
+              ),
+            ],
+          ),
+        ),
       ),
-    ));
+    );
   }
 }
