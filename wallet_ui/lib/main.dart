@@ -4,7 +4,6 @@ import 'package:wallet_ui/screens/list.dart';
 import 'package:wallet_ui/screens/f_page.dart';
 import 'package:wallet_ui/screens/login.dart';
 import 'package:wallet_ui/screens/onboarding.dart';
-import 'package:wallet_ui/screens/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
