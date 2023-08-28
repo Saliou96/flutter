@@ -25,10 +25,8 @@ class _RegisterState extends State<Register> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height,
-            maxWidth: MediaQuery.of(context).size.width,
-          ),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
               Expanded(
@@ -54,6 +52,14 @@ class _RegisterState extends State<Register> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      const Text(
+                        "Welcome",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 35,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                       const SizedBox(height: 50),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
