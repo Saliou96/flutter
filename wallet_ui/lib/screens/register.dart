@@ -23,32 +23,36 @@ class _RegisterState extends State<Register> {
     // double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/images/logo.png"),
-                    ],
-                  ),
+      body: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+          minWidth: MediaQuery.of(context).size.width,
+        ),
+        //height: MediaQuery.of(context).size.height,
+        //width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 40),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset("assets/images/logo.png"),
+                  ],
                 ),
               ),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  // width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.orange[400],
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40),
-                      )),
+            ),
+            Expanded(
+              child: Container(
+                // width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.orange[400],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                    )),
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -286,8 +290,8 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
