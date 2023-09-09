@@ -1,5 +1,5 @@
 // import 'package:auth_register_ui/screens/login.dart';
-import 'package:auth_register_ui/screens/splashscreen.dart';
+import 'package:auth_register_ui/screens/home.dart';
 // import 'package:auth_register_ui/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home:Test(),
+    return const MaterialApp(
+      home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
