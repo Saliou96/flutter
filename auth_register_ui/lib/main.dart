@@ -1,5 +1,7 @@
 // import 'package:auth_register_ui/screens/login.dart';
 import 'package:auth_register_ui/screens/home.dart';
+import 'package:auth_register_ui/screens/login.dart';
+import 'package:auth_register_ui/screens/register.dart';
 // import 'package:auth_register_ui/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Home(),
+      home: Login(),
       debugShowCheckedModeBanner: false,
     );
   }
