@@ -15,7 +15,7 @@ class Square_sn extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          print("google");
+          print("google");  
         },
         child: Image.asset(
           imagePath,
