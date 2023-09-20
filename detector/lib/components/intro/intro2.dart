@@ -7,7 +7,7 @@ class Intro2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Center(
-          child: Text("2")
+        child:Image.asset("assets/images/france.jpg"),
       ),
     );
   }

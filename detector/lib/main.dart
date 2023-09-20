@@ -1,6 +1,4 @@
 import 'package:detector/screens/home.dart';
-import 'package:detector/screens/login.dart';
-import 'package:detector/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -11,7 +11,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   @override
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
@@ -21,7 +20,7 @@ class _LoginState extends State<Login> {
           body: SingleChildScrollView(
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                padding: const EdgeInsets.all(30),
                 child: Column(
                   children: [
                     const SizedBox(

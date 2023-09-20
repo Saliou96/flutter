@@ -106,7 +106,7 @@ class _LoginFormState extends State<LoginForm> {
             _formKey.currentState?.validate();
           },
           style: ElevatedButton.styleFrom(
-              fixedSize: const Size(400, 60),
+              fixedSize: const Size(600, 60),
               backgroundColor: Colors.black,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),

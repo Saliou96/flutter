@@ -1,7 +1,6 @@
 import 'package:detector/components/registerform.dart';
 import 'package:detector/components/square_sn.dart';
 import 'package:detector/screens/login.dart';
-import 'package:detector/screens/register.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -22,7 +21,7 @@ class _RegisterState extends State<Register> {
             child: Center(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    const EdgeInsets.all(30),
                 child: Column(
                   children: [
                     const SizedBox(

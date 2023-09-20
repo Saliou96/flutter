@@ -1,6 +1,6 @@
-import 'package:detector/screens/intro/intro1.dart';
-import 'package:detector/screens/intro/intro2.dart';
-import 'package:detector/screens/intro/intro3.dart';
+import 'package:detector/components/intro/intro1.dart';
+import 'package:detector/components/intro/intro2.dart';
+import 'package:detector/components/intro/intro3.dart';
 import 'package:detector/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -40,26 +40,28 @@ class _OnboardingState extends State<Onboarding> {
                 SmoothPageIndicator(
                   controller: _controller,
                   count: 3,
-                  effect: ColorTransitionEffect(activeDotColor: Colors.green),
+                  effect: ExpandingDotsEffect(activeDotColor: Colors.green),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     onLastPage
-                      ? Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return Login();
-                          }),
-                        )
-                      : _controller.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeIn);
+                        ? Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return Login();
+                            }),
+                          )
+                        : _controller.nextPage(
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
                   },
                   style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(100, 50),
+                      fixedSize: const Size(100, 25),
                       backgroundColor: Colors.orange,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30))),
+                          borderRadius: BorderRadius.circular(30)
+                        )
+                      ),
                   child: Text(onLastPage ? "DONE" : "NEXT",
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                 ),
