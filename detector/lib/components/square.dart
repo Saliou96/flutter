@@ -16,7 +16,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
           Padding(
@@ -26,7 +26,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
           Padding(
@@ -36,7 +36,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
           Padding(
@@ -46,7 +46,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
           Padding(
@@ -56,7 +56,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
           Padding(
@@ -66,7 +66,7 @@ class Square extends StatelessWidget {
               height: 150,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(242, 226, 206, 1)),
+                  color: Colors.orange),
             ),
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:detector/components/config/themedata.dart';
 import 'package:detector/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: AppTheme().light,
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

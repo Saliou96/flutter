@@ -1,10 +1,13 @@
-import 'package:detector/components/square_sn.dart';
+import 'package:detector/components/pages/account.dart';
+import 'package:detector/components/pages/history.dart';
+import 'package:detector/components/pages/homep.dart';
+import 'package:detector/screens/home.dart';
 import 'package:flutter/material.dart';
-import 'package:detector/components/cercle.dart';
-import 'package:detector/components/square.dart';
 
 class CustomBody extends StatelessWidget {
-  const CustomBody({super.key});
+  final int index;
+
+  const CustomBody({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +17,32 @@ class CustomBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Recently",
-                  style:TextStyle(fontWeight: FontWeight.bold, fontSize: 20)
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.filter_list_rounded))
-              ],
-            ),
-            Container(
-                height: MediaQuery.of(context).size.height / 1.5,
-                child: Square()),
+            getSelectedWidget(index: index),
           ],
         ),
       ),
     );
+  }
+
+  Widget getSelectedWidget({required int index}) {
+    Widget widget;
+    switch (index) {
+      case 0:
+        widget = History(); // Use the actual widget here
+        break;
+
+      case 1:
+        widget = HomeP(); // Use the actual widget here
+        break;
+
+      case 2:
+        widget = Account(); // Use the actual widget here
+        break;
+
+      default:
+        widget =
+            HomeP(); // You can replace this with a default widget if needed
+    }
+    return widget;
   }
 }

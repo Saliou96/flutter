@@ -10,27 +10,29 @@ class CustomBottomNavbar extends StatefulWidget {
 }
 
 class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
-  int _page = 0;
+  final items = const [
+    Icon(Icons.history, size: 30),
+    Icon(Icons.home, size: 30),
+    Icon(Icons.add, size: 30),
+  ];
+
+  int _index = 0;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
       key: _bottomNavigationKey,
-      index: 0,
+      index: _index,
       height: 60.0,
-      items: <Widget>[
-        Icon(Icons.history, size: 30),
-        Icon(Icons.home, size: 30),
-        Icon(Icons.add, size: 30),
-      ],
+      items: items,
       animationCurve: Curves.easeInOut,
       backgroundColor: Colors.white,
       color: Color.fromRGBO(242, 226, 206, 1),
       animationDuration: Duration(milliseconds: 300),
-      onTap: (index) {
+      onTap: (selected) {
         setState(() {
-          _page = index;
+          _index = selected;
         });
       },
       letIndexChange: (index) => true,

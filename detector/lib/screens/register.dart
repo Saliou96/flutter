@@ -1,4 +1,4 @@
-import 'package:detector/components/registerform.dart';
+import 'package:detector/components/register/registerform.dart';
 import 'package:detector/components/square_sn.dart';
 import 'package:detector/screens/login.dart';
 import 'package:flutter/material.dart';
