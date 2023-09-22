@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:ecommerce/widgets/home/homebody.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,73 @@ class Homepage extends StatelessWidget {
         // title: Image.asset("assets/images/logo.png"),
         actions: [Icon(Icons.notifications)],
       ),
-      body: HomeBody(),
+      body: MyHome(),
+    ));
+  }
+}
+
+class MyHome extends StatefulWidget {
+  const MyHome({super.key});
+
+  @override
+  State<MyHome> createState() => _MyHomeState();
+}
+
+class _MyHomeState extends State<MyHome> {
+  var jsonList;
+
+  @override
+  void initState() {
+    super.initState();
+    getProducts();
+  }
+
+  void getProducts() async {
+    try {
+      var res = await Dio().get("https://fakestoreapi.com/products");
+      if (res.statusCode == 200) {
+        setState(() {
+          jsonList = res.data as List;
+        });
+        // print(res);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        final product = jsonList[index];
+        return Card(
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: ListTile(
+            leading: Image.network(product['image']), // Display product image
+            title: Text(
+              product['title'],
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              "\$${product['price'].toStringAsFixed(2)}",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.green,
+              ),
+            ),
+            trailing: Icon(Icons.arrow_forward),
+          ),
+        );
+      },
+      itemCount: jsonList == null ? 0 : jsonList.length,
     ));
   }
 }

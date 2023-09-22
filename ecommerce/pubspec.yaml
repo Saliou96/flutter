@@ -39,6 +39,9 @@ dependencies:
   flutter_onboarding_slider: ^1.0.10
   smooth_page_indicator: ^1.1.0
   http: ^1.1.0
+  dio: ^5.3.3
+  carousel_slider: ^4.2.1
+  retrofit: ^4.0.1
 
 dev_dependencies:
   flutter_test:

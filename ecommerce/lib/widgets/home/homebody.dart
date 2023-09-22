@@ -2,9 +2,14 @@ import 'package:ecommerce/widgets/home/categorycard.dart';
 import 'package:ecommerce/widgets/home/productscard.dart';
 import 'package:flutter/material.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
 
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
