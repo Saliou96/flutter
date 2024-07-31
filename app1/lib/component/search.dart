@@ -31,5 +31,18 @@ class Search extends StatelessWidget {
     //     ),
     //   ),
     // )
+
+    // TextField(
+    //                       style: TextStyle(color: Colors.white),
+    //                       decoration: InputDecoration(
+    //                         prefixIcon: Icon(Icons.date_range),
+    //                         prefixIconColor: Colors.white,
+    //                           filled: true,
+    //                           fillColor:Color.fromRGBO(46, 46, 46, 1),
+    //                           border: OutlineInputBorder(
+    //                               borderRadius: BorderRadius.circular(8),
+    //                               borderSide: BorderSide.none),
+    //                           hintText: "search",hintStyle: TextStyle(color: Colors.white)),
+    //                     ),
   }
 }
